@@ -30,16 +30,16 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_product_details2);
 
         viewInAR = (Button) findViewById(R.id.view_in_ar);
-        /*productID= getIntent().getStringExtra("pid");
+        //productID= getIntent().getStringExtra("pid");
 
         //addToCartBtn = (FloatingActionButton) findViewById(R.id.add_product_to_cart);
         viewInAR = (Button) findViewById(R.id.view_in_ar);
         productPrice=(TextView) findViewById(R.id.product_price);
         productDescription=(TextView) findViewById(R.id.product_description);
         productName=(TextView) findViewById(R.id.product_name);
-        productImage=(ImageView) findViewById(R.id.product_image_details);*/
+        productImage=(ImageView) findViewById(R.id.product_image_details);
 
-        //getProductDetails(productID);
+        getProductDetails(productID);
         viewInAR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +49,7 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
         });
     }
 
-    /*private void getProductDetails(String productID) {
+    private void getProductDetails(String productID) {
 
         DatabaseReference productsRef = FirebaseDatabase.getInstance().getReference().child("Products");
 
@@ -76,5 +76,5 @@ public class ProductDetailsActivity2 extends AppCompatActivity {
 
             }
         });
-    }*/
+    }
 }

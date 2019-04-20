@@ -53,8 +53,8 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               Intent intent=new Intent(HomeActivity.this, CartActivity.class);
+               startActivity(intent);
             }
         });
 
@@ -98,7 +98,7 @@ public class HomeActivity extends AppCompatActivity
                     protected void onBindViewHolder(@NonNull ProductViewHolder holder, int position, @NonNull Products model) {
                         holder.txtProductName.setText(model.getPname());
                         holder.txtProductDescription.setText(model.getDescription());
-                        holder.txtProductPrice.setText("Price = " + model.getPrice() + "$");
+                        holder.txtProductPrice.setText("Price = Rs." + model.getPrice());
                         Picasso.get().load(model.getImage()).into(holder.imageView);
 
                         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +106,7 @@ public class HomeActivity extends AppCompatActivity
                             public void onClick(View view) {
                                 Intent intent=new Intent(HomeActivity.this,ProductDetailsActivity3.class);
                                 intent.putExtra("pName",model.getPname());
+                                intent.putExtra("pid",model.getPid());
                                 startActivity(intent);
                             }
                         });
@@ -163,7 +164,8 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_cart) {
-            // Handle the camera action
+            Intent intent=new Intent(HomeActivity.this, CartActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_categories) {

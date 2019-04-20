@@ -32,10 +32,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         //addToCartBtn = (FloatingActionButton) findViewById(R.id.add_product_to_cart);
         //viewInAR = (Button) findViewById(R.id.view_in_ar);
-        productPrice=(TextView) findViewById(R.id.product_price);
-        productDescription=(TextView) findViewById(R.id.product_description);
-        productName=(TextView) findViewById(R.id.product_name);
         productImage=(ImageView) findViewById(R.id.product_image_details);
+        productName=(TextView) findViewById(R.id.product_name_details);
+        productDescription=(TextView) findViewById(R.id.product_description_details);
+        productPrice=(TextView) findViewById(R.id.product_price_details);
+
         
         getProductDetails(productID);
     }

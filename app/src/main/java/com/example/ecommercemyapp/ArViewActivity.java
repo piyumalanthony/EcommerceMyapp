@@ -10,6 +10,7 @@ import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.assets.RenderableSource;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.ux.ArFragment;
+import com.google.ar.sceneform.ux.TransformableNode;
 
 public class ArViewActivity extends AppCompatActivity {
 
@@ -56,8 +57,11 @@ public class ArViewActivity extends AppCompatActivity {
     private void addNodeToScene(ModelRenderable modelRenderable, Anchor anchor) {
 
         AnchorNode anchorNode= new AnchorNode(anchor);
-        anchorNode.setRenderable(modelRenderable);
+        TransformableNode transformableNode=new TransformableNode(arFragment.getTransformationSystem());
+        transformableNode.setParent(anchorNode);
+        transformableNode.setRenderable(modelRenderable);
         arFragment.getArSceneView().getScene().addChild(anchorNode);
+        transformableNode.select();
     }
 
 
