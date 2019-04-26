@@ -31,7 +31,7 @@ public class ProductDetailsActivity3 extends AppCompatActivity {
     private Button arView,addToCart;
     private TextView textView,productName,productDescription,productPrice;
     private ImageView productImage;
-    private String productID= "";
+    private String productID= "", state="Normal";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +61,23 @@ public class ProductDetailsActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 
-                addingToCartList();
+
+
+                if(state.equals("Order Placed") || state.equals("Order Shipped")){
+                    Toast.makeText(ProductDetailsActivity3.this, "You can purchase more orders once you recieve your order", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    addingToCartList();
+                }
             }
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        CheckOrderState();
     }
 
     private void addingToCartList() {
@@ -144,5 +158,40 @@ public class ProductDetailsActivity3 extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void CheckOrderState(){
+
+        DatabaseReference ordersRef;
+        ordersRef= FirebaseDatabase.getInstance().getReference().child("orders")
+                .child(Prevalent.currentOnlineUser.getPhone());
+
+
+        ordersRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if(dataSnapshot.exists()){
+                    String shippingState = dataSnapshot.child("state").getValue().toString();
+
+                    if(shippingState.equals("shipped")){
+
+                        state= "Order Shipped";
+                    }
+                    else if(shippingState.equals("not shipped")){
+
+                        state ="Order Placed";
+
+                    }
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 }

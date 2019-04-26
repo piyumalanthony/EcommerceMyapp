@@ -30,10 +30,10 @@ import java.util.HashMap;
 
 public class AdminAddProductActivity extends AppCompatActivity
 {
-    private String CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime;
+    private String CategoryName, Description, Price, Pname, saveCurrentDate, saveCurrentTime, ARview;
     private Button AddNewProductButton;
     private ImageView InputProductImage;
-    private EditText InputProductName, InputProductDescription, InputProductPrice;
+    private EditText InputProductName, InputProductDescription, InputProductPrice, ARname;
     private static final int GalleryPick = 1;
     private Uri ImageUri;
     private String productRandomKey, downloadImageUrl;
@@ -59,6 +59,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         InputProductName = (EditText) findViewById(R.id.product_name);
         InputProductDescription = (EditText) findViewById(R.id.product_description);
         InputProductPrice = (EditText) findViewById(R.id.product_price);
+        ARname = (EditText) findViewById(R.id.ar_name);
         loadingBar = new ProgressDialog(this);
 
 
@@ -109,6 +110,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         Description = InputProductDescription.getText().toString();
         Price = InputProductPrice.getText().toString();
         Pname = InputProductName.getText().toString();
+        ARview= ARname.getText().toString();
 
 
         if (ImageUri == null)
@@ -215,6 +217,8 @@ public class AdminAddProductActivity extends AppCompatActivity
         productMap.put("category", CategoryName);
         productMap.put("price", Price);
         productMap.put("pname", Pname);
+        productMap.put("ar", ARview);
+
 
         ProductsRef.child(productRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {

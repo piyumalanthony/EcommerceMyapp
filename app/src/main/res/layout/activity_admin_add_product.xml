@@ -16,34 +16,8 @@
         android:cropToPadding="false"
         android:scaleType="centerCrop"
         android:src="@drawable/select_product_image" />
-    <Button
-        android:id="@+id/add_new_gltf"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/select_product_image"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="45dp"
-        android:background="@drawable/buttons"
-        android:padding="17dp"
-        android:text="Add gltf 3D model"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
-    <Button
-        android:id="@+id/add_bin_file"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/add_new_gltf"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="45dp"
-        android:background="@drawable/buttons"
-        android:padding="17dp"
-        android:text="Add bin file for 3D model"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        android:textSize="18sp" />
+
+
 
 
 
@@ -51,7 +25,7 @@
         android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_bin_file"
+        android:layout_below="@+id/select_product_image"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="45dp"
@@ -88,12 +62,25 @@
         android:inputType="textMultiLine"
         android:padding="20dp" />
 
+    <EditText
+        android:id="@+id/ar_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_price"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="45dp"
+        android:background="@drawable/input_design"
+        android:hint="Product Model Name..."
+        android:inputType="textMultiLine"
+        android:padding="20dp" />
+
 
     <Button
         android:id="@+id/add_new_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/product_price"
+        android:layout_below="@+id/ar_name"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="45dp"

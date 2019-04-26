@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="10dp"
         android:text="Add New Product"
         android:textAlignment="center"
         android:textSize="26sp"
@@ -29,9 +29,9 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="2dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="5dp">
 
         <ImageView
             android:id="@+id/chair"
@@ -68,22 +68,21 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="2dp">
 
         <ImageView
             android:id="@+id/beds"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
+            android:layout_height="90dp"
             android:src="@drawable/beds"
             />
 
         <ImageView
             android:id="@+id/table_and_chair"
             android:layout_width="wrap_content"
-            android:layout_height="120dp"
+            android:layout_height="90dp"
             android:src="@drawable/table_and_chair"
             />
-
 
 
     </LinearLayout>
@@ -98,28 +97,64 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true"
         android:gravity="center"
-        android:layout_marginTop="45dp">
+        android:layout_marginTop="5dp">
 
         <ImageView
             android:id="@+id/sofa"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="90dp"
             android:src="@drawable/sofa"
+
             />
 
 
 
-        <ImageView
-            android:id="@+id/lamp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/lamp"
-            />
 
 
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/check_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="25dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Check New Orders"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:layout_below="@+id/linear3_category_layout"
+        android:textAllCaps="false"
+
+
+        />
+
+    <Button
+        android:id="@+id/maintain_orders_btn"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Maintain Orders"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:layout_below="@+id/check_orders_btn"
+        android:textAllCaps="false"
+
+        />
+    <Button
+        android:id="@+id/admin_log_out"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Log Out"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:layout_below="@+id/main_login_btn"
+        android:textAllCaps="false"
+        />
 
 
 
