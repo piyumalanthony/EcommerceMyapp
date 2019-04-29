@@ -13,7 +13,7 @@ public class AdminCatergoryActivity extends AppCompatActivity {
     private ImageView beds, table_and_chair;
     private ImageView sofa;// lamp;
 
-    private Button LogOutButton, CheckOrderButton, MaintainOrderButton;
+    private Button LogOutButton, CheckOrderButton, MaintainProductsButton;
 
 
 
@@ -25,7 +25,9 @@ public class AdminCatergoryActivity extends AppCompatActivity {
 
         LogOutButton  = (Button)findViewById(R.id.admin_log_out);
         CheckOrderButton  = (Button)findViewById(R.id.check_orders_btn);
-        MaintainOrderButton  = (Button)findViewById(R.id.maintain_orders_btn);
+        MaintainProductsButton  = (Button)findViewById(R.id.maintain_orders_btn);
+
+
 
         chair = (ImageView) findViewById(R.id.chair);
         table = (ImageView) findViewById(R.id.table);
@@ -37,6 +39,18 @@ public class AdminCatergoryActivity extends AppCompatActivity {
 
         sofa= (ImageView) findViewById(R.id.sofa);
         //lamp= (ImageView) findViewById(R.id.lamp);
+
+
+        MaintainProductsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(AdminCatergoryActivity.this, HomeActivity.class);
+                intent.putExtra("Admin","Admin");
+                startActivity(intent);
+
+            }
+        });
 
         LogOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
