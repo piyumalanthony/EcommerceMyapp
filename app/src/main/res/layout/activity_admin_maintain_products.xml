@@ -20,66 +20,75 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@+id/product_name"
-            android:scaleType="fitCenter"
             android:layout_marginTop="2dp"
-            />
+            android:scaleType="fitCenter" />
 
         <EditText
             android:id="@+id/product_name_maintain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_image_maintain"
-            android:hint= "Product Name"
-            android:textAlignment="center"
-            android:textSize="18dp"
-            android:padding="12dp"
             android:layout_margin="5dp"
-            android:textColor="@color/cardview_dark_background"
             android:background="@drawable/input_design"
-            />
+            android:hint="Product Name"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/product_price_maintain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_name_maintain"
-            android:hint= "Product Price"
-            android:textAlignment="center"
-            android:textSize="18dp"
-            android:padding="12dp"
             android:layout_margin="5dp"
-            android:textColor="@color/cardview_dark_background"
             android:background="@drawable/input_design"
-            />
+            android:hint="Product Price"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="18dp" />
 
         <EditText
             android:id="@+id/product_description_maintain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_price_maintain"
-            android:hint="Product Description"
-            android:layout_marginTop="2dp"
-            android:textAlignment="center"
-            android:padding="12dp"
             android:layout_margin="5dp"
-            android:textSize="16dp"
-            android:textColor="@color/cardview_dark_background"
+            android:layout_marginTop="2dp"
             android:background="@drawable/input_design"
-            />
+            android:hint="Product Description"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="16dp" />
+
         <Button
             android:id="@+id/apply_changes_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/product_description_maintain"
-            android:hint="Apply Changes"
-            android:layout_marginTop="2dp"
-            android:textAlignment="center"
-            android:padding="12dp"
             android:layout_margin="5dp"
-            android:textSize="16dp"
-            android:textColor="@color/cardview_dark_background"
+            android:layout_marginTop="2dp"
             android:background="@drawable/buttons"
-            />
+            android:hint="Apply Changes"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/product_delete_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/apply_changes_btn"
+            android:background="@drawable/buttons"
+            android:hint="Delete Product"
+            android:layout_margin="8dp"
+            android:padding="12dp"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="16dp" />
 
     </RelativeLayout>
 
