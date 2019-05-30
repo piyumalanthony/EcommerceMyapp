@@ -32,6 +32,7 @@ public class ProductDetailsActivity3 extends AppCompatActivity {
     private TextView textView,productName,productDescription,productPrice;
     private ImageView productImage;
     private String productID= "", state="Normal";
+    private String productNameAR="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class ProductDetailsActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_product_details3);
 
         productID= getIntent().getStringExtra("pid");
+        productNameAR= getIntent().getStringExtra("pName");
+
 
         arView= (Button)findViewById(R.id.ar_view);
         addToCart= (Button)findViewById(R.id.add_to_cart);
@@ -54,6 +57,7 @@ public class ProductDetailsActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(ProductDetailsActivity3.this,ArViewActivity.class);
+                intent.putExtra("productNameForFetch",productNameAR);
                 startActivity(intent);
             }
         });

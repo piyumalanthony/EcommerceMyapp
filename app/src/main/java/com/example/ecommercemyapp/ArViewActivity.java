@@ -18,6 +18,7 @@ public class ArViewActivity extends AppCompatActivity {
     private String name="model";
     private String link="https://quantummechanicsdepth.000webhostapp.com/";
     private String ASSET_3D="";
+    private String modelFetchName="";
 
 
     @Override
@@ -25,7 +26,12 @@ public class ArViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ar_view);
 
-        ASSET_3D= link + name + ".gltf";
+        // get specific model details which selected
+        modelFetchName=getIntent().getStringExtra("productNameForFetch");
+
+        ASSET_3D= link +modelFetchName+"/"+ name + ".gltf";
+
+        //create AR fragment to render the 3D model
         arFragment= (ArFragment) getSupportFragmentManager().findFragmentById(R.id.arFragment);
 
         arFragment.setOnTapArPlaneListener((hitResult, plane, motionEvent) ->{
@@ -33,6 +39,7 @@ public class ArViewActivity extends AppCompatActivity {
         } );
     }
 
+    //render model on the given anchor node
     private void placeModel(Anchor anchor) {
 
         ModelRenderable
@@ -56,6 +63,7 @@ public class ArViewActivity extends AppCompatActivity {
     }
     private void addNodeToScene(ModelRenderable modelRenderable, Anchor anchor) {
 
+        //create anchor node and transformable node for 3D model
         AnchorNode anchorNode= new AnchorNode(anchor);
         TransformableNode transformableNode=new TransformableNode(arFragment.getTransformationSystem());
         transformableNode.setParent(anchorNode);

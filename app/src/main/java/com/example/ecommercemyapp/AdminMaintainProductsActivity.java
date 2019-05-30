@@ -84,6 +84,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         });
     }
 
+    //change product details
     private void applyChanges() {
 
         String pName = name.getText().toString();
@@ -125,7 +126,7 @@ public class AdminMaintainProductsActivity extends AppCompatActivity {
         }
 
     }
-
+    //set product details
     private void displaySpecificProductInfo() {
 
         productsRef.addValueEventListener(new ValueEventListener() {

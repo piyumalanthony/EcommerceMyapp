@@ -52,6 +52,7 @@ public class AdminCatergoryActivity extends AppCompatActivity {
             }
         });
 
+        //set onclick listeners to products storing
         LogOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

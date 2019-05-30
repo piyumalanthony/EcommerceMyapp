@@ -62,7 +62,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         ARname = (EditText) findViewById(R.id.ar_name);
         loadingBar = new ProgressDialog(this);
 
-
+        //to select image
         InputProductImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -71,7 +71,7 @@ public class AdminAddProductActivity extends AppCompatActivity
             }
         });
 
-
+        //add ew product
         AddNewProductButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -82,7 +82,7 @@ public class AdminAddProductActivity extends AppCompatActivity
     }
 
 
-
+    //open gallery functionality
     private void OpenGallery()
     {
         Intent galleryIntent = new Intent();
@@ -91,7 +91,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         startActivityForResult(galleryIntent, GalleryPick);
     }
 
-
+    //set image url from storage url
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -104,7 +104,7 @@ public class AdminAddProductActivity extends AppCompatActivity
         }
     }
 
-
+    //verfity input product details
     private void ValidateProductData()
     {
         Description = InputProductDescription.getText().toString();
@@ -136,7 +136,7 @@ public class AdminAddProductActivity extends AppCompatActivity
     }
 
 
-
+    //save image to storage
     private void StoreProductInformation()
     {
         loadingBar.setTitle("Add New Product");

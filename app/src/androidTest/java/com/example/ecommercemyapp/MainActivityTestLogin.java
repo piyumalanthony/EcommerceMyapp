@@ -17,13 +17,14 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.*;
 
-public class MainActivityTest {
+public class MainActivityTestLogin {
+
 
     @Rule
     public ActivityTestRule<MainActivity> mainActivityActivityTestRule= new ActivityTestRule<MainActivity>(MainActivity.class);
 
     private MainActivity mainActivity =null;
-    Instrumentation.ActivityMonitor monitor= getInstrumentation().addMonitor(RegisterActivity.class.getName(),null,false);
+    Instrumentation.ActivityMonitor monitor= getInstrumentation().addMonitor(LoginActivity2.class.getName(),null,false);
 
     @Before
     public void setUp() throws Exception {
@@ -41,11 +42,11 @@ public class MainActivityTest {
         assertNotNull(joinNowButton);
         assertNotNull(loginButton);
 
-        onView(withId(R.id.main_join_now_btn)).perform(click());
+        onView(withId(R.id.main_login_btn)).perform(click());
 
-        Activity registerActivity= getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
+        Activity loginActivity= getInstrumentation().waitForMonitorWithTimeout(monitor,5000);
 
-        assertNotNull(registerActivity);
+        assertNotNull(loginActivity);
     }
 
     @After
